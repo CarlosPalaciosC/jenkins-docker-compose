@@ -1,2 +1,2 @@
 # jenkins-docker-compose
-Despliegue de jenkins y herramientas adicionales para armar un flujo de automatización para uso en un entorno de desarrollo local.
+Despliegue de jenkins y herramientas adicionales con docker-compose para armar un flujo automatizado en un entorno de desarrollo local
