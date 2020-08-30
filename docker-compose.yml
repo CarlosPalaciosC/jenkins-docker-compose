@@ -1,23 +1,23 @@
-version: "3.1"
+version: "3.3"
 
 services:
   jenkins:
-    build: ./jenkins
-    image: jenkins
-    container_name: jenkins
+    build: ./jenkins # Directorio donde se ubican los archivos necesarios para ejecutar Jenkins
+    image: jenkins # Nombre de la imagen de docker con la que crearemos Jenkins
+    container_name: jenkins # Nombre del contenedor
     ports:
-      - "8080:8080"
+      - "8080:8080" # puerto del host:puerto del contenedor
     networks:
-      - devops
+      - devops # asociamos Jenkins a una red de docker personalizada
     environment:
-      - JENKINS_OPTS="--prefix=/jenkins"
+      - JENKINS_OPTS="--prefix=/jenkins" # HOME de Jenkins: localhost:8080/jenkins
     volumes:
-      - /opt/tools-devops/Source/docker/build/jenkins:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /opt/tools-devops/Source/docker/build/jenkins:/var/jenkins_HOME # Volumenes asociados para no perder la data de Jenkins
+      - /var/run/docker.sock:/var/run/docker.sock # Asociación de archivo docker.sock, para que Jenkins pueda ejecutar comandos de docker.
 
   artifactory:
-    build: ./artifactory
-    image: artifactory
+    build: ./artifactory # Directorio donde se ubican los archivos necesarios para ejecutar Jenkins
+    image: artifactory # Nombre de la imagen de docker con la que crearemos Artifactory
     container_name: artifactory
     ports:
       - 8082:8082
