@@ -10,4 +10,4 @@ docker-compose up -d
 docker ps
 
 docker exec -ti jenkins bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
-```
+```# bitbucket-pipelines-examples
