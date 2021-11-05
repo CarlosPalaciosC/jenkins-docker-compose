@@ -11,5 +11,3 @@ docker ps
 
 docker exec -ti jenkins bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
 ```
-
-Leer artículo completo: https://holadevops.com/posts/jenkins-artifactory-docker-compose/
